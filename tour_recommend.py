@@ -73,19 +73,24 @@ def run_stage(stage_name: str, payload: dict|str, out_dir: Path, errors: list ,k
         print(f"[{stage_name}] 예상치 못한 오류: {e}")
         return None
 
-def search_places(city:str, size=5) -> list[dict]:
+def search_places(city: str, size=5) -> list[dict]:
     r = requests.get(
         "https://dapi.kakao.com/v2/local/search/keyword.json",
         headers={"Authorization": "KakaoAK " + os.environ["KAKAO_API_KEY"]},
-        params={"query":city+" 맛집","size":size,"category_group_code": "FD6"}
+        params={"query": city + " 맛집", "size": size, "category_group_code": "FD6"},
+        timeout=10,
     )
+    if r.status_code in (401, 403):
+        raise RuntimeError(f"인증 실패({r.status_code}). KAKAO_API_KEY 값과 Kakao Developers의 플랫폼/도메인 설정을 확인하세요")
+    if r.status_code == 429:
+        raise RuntimeError("호출 한도 초과(429). 잠시 후 다시 시도하세요")
     if r.status_code != 200:
         raise RuntimeError(f"kakao 호출 실패: 상태 코드 {r.status_code}")
     data = r.json()
     if "documents" not in data:
-        raise RuntimeError(f"kakao응답에 응답에 documents 없습니다")
+        raise RuntimeError("kakao 응답에 documents가 없습니다")
     return data["documents"]
-
+    
 def valid_date(s):
     try:
         inputDate = datetime.strptime(s, "%Y-%m-%d")
@@ -180,9 +185,10 @@ def main():
                         print(f"-맛집 {len(validFoods)}곳 검색 완료")
 
             except Exception as e:
-                errors.append({"type":f"{type(e).__name__}","stage":"restaurantRecommend", "msg": f"예상외 에러 발생 맛집 검색 실패 {e}"})
-                print(f"[restaurantRecommend] 진행불가: {e}")
-                print(f"예상외 에러 발생 맛집 검색 실패: {type(e).__name__}: {e} results/{date}_error.json 확인")
+                errors.append({"type": f"{type(e).__name__}", "stage": "restaurantRecommend", "msg": f"{e}"})
+                print(f" - 오류: {e}")
+                print(" - 맛집 섹션은 '데이터 없음'으로 처리하고 계속 진행합니다.")
+                print(f" - 오류 상세: results/{date}_error.json")
         try:
             print("[3/3] 최종 리포트 생성 중(LLM)...")
             keywords = ["report"]
@@ -192,9 +198,9 @@ def main():
                 md_path.write_text(report["report"],encoding="utf-8")
                 print(f"-리포트 생성 완료 {md_path} 확인")
         except Exception as e:
-            errors.append({"type":f"{type(e).__name__}","stage":"finalReport", "msg": f"예상외 에러 발생 최종리포트 작성 실패 {e}"})
+            errors.append({"type": f"{type(e).__name__}", "stage": "finalReport", "msg": f"예상외 에러 발생 최종리포트 작성 실패 {e}"})
             print(f"[finalReport] 진행불가: {e}")
-            print(f"예상외 에러 발생 최종리포트 작성 실패: {type(e).__name__}: {e}")
+            print(f" - 오류 상세: results/{date}_error.json")
     except Exception as e:
         errors.append({"type":f"{type(e).__name__}","stage":"[main] unknown","msg":f"예상치 못한 오류 {e}"})
         print(f"[main] 예상치 못한 오류: {e}")
