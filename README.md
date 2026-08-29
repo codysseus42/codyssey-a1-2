@@ -258,7 +258,8 @@ recommended_city, weather, events, reason
 ...
 
 ## 오류 요약(errors)
-- [restaurantRecommend] RuntimeError: 예상외 에러 발생 맛집 검색 실패 kakao 호출 실패: 상태 코드 401
+- [restaurantRecommend] RuntimeError: 인증 실패(401). KAKAO_API_KEY 값과 Kakao Developers의 플랫폼/도메인 설정을 확인하세요
+
 ```
 
 맛집 섹션은 "데이터 없음"으로 표기되고, 일정 제안은 식사 일정을 빼고 관광지 중심으로 재구성됩니다. 프롬프트에 "입력에 없는 사실을 새로 만들지 않는다"를 명시했기 때문에 존재하지 않는 맛집을 지어내지 않습니다.
