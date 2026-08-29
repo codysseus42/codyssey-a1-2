@@ -125,25 +125,20 @@ def main():
 
         out = Path("./results")
         out.mkdir(parents=True, exist_ok=True)
-
-        raw_path = oug / f"{date}_raw_data.json"
+        raw_path = out / f"{date}_raw_data.json"
         if raw_path.exists():
             cached = json.loads(raw_path.read_text(encoding="utf-8"))
             if cached.get("recommendation"):
                 print(f"캐시된 원본 데이터 발견({date}) - 1·2단계를 건너뜁니다.")
                 recommendation = cached["recommendation"]
                 errors = cached.get("errors", [])
-
-    
-
-
         if recommendation is None:
             print("[1/3] 1차 추천 생성 중...")
             keywords = ["recommended_city","weather","events","reason"]
             recommendation = run_stage("cityRecommend",date,out,errors,keywords,date)
             if recommendation is None:
                 errors.append({"type":"noCity","stage":"cityRecommend","msg":"추천 도시를 얻지 못했습니다. 종료합니다."})
-                print("추천 도시를 얻지 못했습니다. 종료합니다.")
+                print(f"추천 도시를 얻지 못했습니다. 종료합니다. results/{date}_error.json 확인")
                 sys.exit(1)
             city = recommendation["recommended_city"]
             print(f"recommended_city: \"{city}\"")
@@ -187,15 +182,15 @@ def main():
             except Exception as e:
                 errors.append({"type":f"{type(e).__name__}","stage":"restaurantRecommend", "msg": f"예상외 에러 발생 맛집 검색 실패 {e}"})
                 print(f"[restaurantRecommend] 진행불가: {e}")
-                print(f"예상외 에러 발생 맛집 검색 실패: {type(e).__name__}: {e}")
+                print(f"예상외 에러 발생 맛집 검색 실패: {type(e).__name__}: {e} results/{date}_error.json 확인")
         try:
             print("[3/3] 최종 리포트 생성 중(LLM)...")
             keywords = ["report"]
             report = run_stage("finalReport", recommendation, out,errors,keywords,date)
             if report is not None and report.get("report") is not None:
-                md_path = Path("./results") /f"{date}_travel_plan.md"
+                md_path = out /f"{date}_travel_plan.md"
                 md_path.write_text(report["report"],encoding="utf-8")
-                print("-리포트 생성 완료")
+                print(f"-리포트 생성 완료 {md_path} 확인")
         except Exception as e:
             errors.append({"type":f"{type(e).__name__}","stage":"finalReport", "msg": f"예상외 에러 발생 최종리포트 작성 실패 {e}"})
             print(f"[finalReport] 진행불가: {e}")
@@ -214,15 +209,12 @@ def main():
         if errors:
             out = Path("./results") 
 
-            errorPath = out
-            errorPath.mkdir(parents=True, exist_ok=True)
-            (errorPath / f"{date}_error.json").write_text(
+            out.mkdir(parents=True, exist_ok=True)
+            (out / f"{date}_error.json").write_text(
                 json.dumps(errors, ensure_ascii=False, indent=2), encoding="utf-8")
             outmd = out / f"{date}_travel_plan.md"
             if outmd.exists():
-                # ##오류 요약(errors) 찾아서 다시 입력
                 with open(outmd, "a", encoding="utf-8") as f:
-                    #리스트는 어떻게 해야하는거지?
                     lines = [f"- [{e['stage']}] {e['type']}: {e['msg']}" for e in errors]
                     f.write("\n\n## 오류 요약(errors)\n" + "\n".join(lines) + "\n")
 

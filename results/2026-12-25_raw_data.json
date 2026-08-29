@@ -1,0 +1,84 @@
+{
+  "date": "2026-12-25",
+  "recommendation": {
+    "recommended_city": "부산 해운대구",
+    "weather": "12월 하순 해운대구는 평균 기온 0℃~8℃ 내외로 타 지역에 비해 비교적 온화하나, 해안가 특유의 찬 바람으로 인해 체감 온도가 낮을 수 있으며 대체로 맑고 건조한 날씨가 지속됩니다.",
+    "events": [
+      "해운대 빛축제"
+    ],
+    "reason": "크리스마스 시즌 해운대 해수욕장과 구남로 일대에서 열리는 빛축제는 화려한 조명 연출로 로맨틱한 겨울 밤바다의 매력을 극대화합니다. 내륙 지방보다 상대적으로 따뜻한 기후 덕분에 겨울철에도 부담 없이 야외 산책과 주변 맛집 탐방을 함께 즐길 수 있습니다.",
+    "food_list": [
+      {
+        "address_name": "부산 해운대구 우동 456-11",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식",
+        "distance": "",
+        "id": "20535029",
+        "phone": "051-746-9661",
+        "place_name": "의령식당",
+        "place_url": "http://place.map.kakao.com/20535029",
+        "road_address_name": "부산 해운대구 우동1로50번길 15",
+        "x": "129.15834069621653",
+        "y": "35.16642258830991"
+      },
+      {
+        "address_name": "부산 해운대구 재송동 1118-7",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 국밥",
+        "distance": "",
+        "id": "20201850",
+        "phone": "051-781-2722",
+        "place_name": "양산왕돼지국밥",
+        "place_url": "http://place.map.kakao.com/20201850",
+        "road_address_name": "부산 해운대구 재반로 70",
+        "x": "129.126346688841",
+        "y": "35.1849430929089"
+      },
+      {
+        "address_name": "부산 해운대구 중동 1394-81",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 국수 > 칼국수",
+        "distance": "",
+        "id": "12427800",
+        "phone": "051-744-0117",
+        "place_name": "사북칼국수",
+        "place_url": "http://place.map.kakao.com/12427800",
+        "road_address_name": "부산 해운대구 중동1로 29",
+        "x": "129.162930831496",
+        "y": "35.1629740207131"
+      },
+      {
+        "address_name": "부산 해운대구 중동 1225-1",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 육류,고기 > 갈비",
+        "distance": "",
+        "id": "8149130",
+        "phone": "051-746-0033",
+        "place_name": "해운대암소갈비집",
+        "place_url": "http://place.map.kakao.com/8149130",
+        "road_address_name": "부산 해운대구 해운대해변로 333",
+        "x": "129.16646470006606",
+        "y": "35.163113604157466"
+      },
+      {
+        "address_name": "부산 해운대구 우동 1434-1",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 중식 > 중국요리",
+        "distance": "",
+        "id": "7991031",
+        "phone": "051-747-0131",
+        "place_name": "아미산 중식당 해운대",
+        "place_url": "http://place.map.kakao.com/7991031",
+        "road_address_name": "부산 해운대구 해운대해변로 154",
+        "x": "129.148629527671",
+        "y": "35.1579443132141"
+      }
+    ]
+  },
+  "errors": []
+}

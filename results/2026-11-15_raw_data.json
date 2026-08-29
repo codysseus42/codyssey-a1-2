@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-15",
+  "recommendation": {
+    "recommended_city": "순천시",
+    "weather": "11월 중순의 순천은 평균 기온 5°C~15°C로 맑고 건조한 날씨가 이어져 야외 활동에 적합하지만, 낮과 밤의 일교차가 크므로 따뜻한 겉옷이 필요합니다.",
+    "events": [
+      "순천만 갈대축제"
+    ],
+    "reason": "11월 중순은 순천만 습지의 황금빛 갈대 물결이 최고조에 달하여 늦가을의 서정적인 장관을 감상할 수 있는 시기입니다. 맑고 선선한 날씨 덕분에 순천만국가정원과 낙안읍성을 천천히 거닐며 가을 정취를 만끽하기에 최적입니다. 붉은 단풍과 은빛 억새, 황금빛 갈대가 어우러진 풍경 속에서 완벽한 힐링을 경험할 수 있습니다.",
+    "food_list": [
+      {
+        "address_name": "전남광주통합특별시 순천시 조례동 1691-16",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 한정식",
+        "distance": "",
+        "id": "8618021",
+        "phone": "061-726-6692",
+        "place_name": "향토정",
+        "place_url": "http://place.map.kakao.com/8618021",
+        "road_address_name": "전남광주통합특별시 순천시 남신월4길 13-26",
+        "x": "127.520365462661",
+        "y": "34.9574748639867"
+      },
+      {
+        "address_name": "전남광주통합특별시 순천시 덕월동 24-2",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 한정식",
+        "distance": "",
+        "id": "19387014",
+        "phone": "061-743-5569",
+        "place_name": "벽오동",
+        "place_url": "http://place.map.kakao.com/19387014",
+        "road_address_name": "전남광주통합특별시 순천시 상사호길 73",
+        "x": "127.48182866245298",
+        "y": "34.92038155983606"
+      },
+      {
+        "address_name": "전남광주통합특별시 순천시 연향동 1375-3",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 술집 > 실내포장마차",
+        "distance": "",
+        "id": "24583248",
+        "phone": "061-726-0090",
+        "place_name": "대영포차",
+        "place_url": "http://place.map.kakao.com/24583248",
+        "road_address_name": "전남광주통합특별시 순천시 연향번영3길 21",
+        "x": "127.516051360381",
+        "y": "34.9455337868801"
+      },
+      {
+        "address_name": "전남광주통합특별시 순천시 조곡동 675-1",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식 > 육류,고기 > 오리",
+        "distance": "",
+        "id": "8405513",
+        "phone": "061-751-0252",
+        "place_name": "부영가든",
+        "place_url": "http://place.map.kakao.com/8405513",
+        "road_address_name": "전남광주통합특별시 순천시 용당둑길 105",
+        "x": "127.48986044523",
+        "y": "34.9622131758185"
+      },
+      {
+        "address_name": "전남광주통합특별시 순천시 저전동 206-33",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 한식",
+        "distance": "",
+        "id": "14827961",
+        "phone": "0507-1460-1479",
+        "place_name": "거시기식당",
+        "place_url": "http://place.map.kakao.com/14827961",
+        "road_address_name": "전남광주통합특별시 순천시 저전길 15",
+        "x": "127.48387452015143",
+        "y": "34.950101006930346"
+      }
+    ]
+  },
+  "errors": []
+}
