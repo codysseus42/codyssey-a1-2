@@ -145,7 +145,7 @@ JSON 파싱이나 필수 키 검증에 실패하면, 원래 프롬프트에 다�
 
 ### 실패 시 동작
 
-![지도 API 실패 / 1차 추천 실패](./readImage/nomapnoCity.png)
+![지도 API 실패 / 1차 추천 실패](./readImage/nomapNocity.png)
 
 - **위**: Gemini 키가 잘못되어 1차 추천 실패 → 즉시 종료
 - **아래**: Kakao 키가 잘못되어 맛집 검색 실패 → 리포트는 정상 생성, `## 오류 요약(errors)` 섹션에 기록
