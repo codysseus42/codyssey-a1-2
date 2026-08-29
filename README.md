@@ -104,7 +104,7 @@ Kakao는 401 응답 메시지에 요청에 사용된 앱 키를 그대로 되돌
 | `{날짜}_raw_data.json` | 파이프라인 전체 결과 + `errors` |
 | `{날짜}_cityRecommend.json` | 1단계 LLM 응답 원본 |
 | `{날짜}_finalReport.json` | 3단계 LLM 응답 원본 |
-| `{날짜}_error.json` | 실패가 있을 때만 생성 (`.gitignore` 대상) |
+| `{날짜}_error.json` | 실패가 있을 때만 생성|
 | `{날짜}_warning.jsonl` | 폴백 모델 사용 등 운영 로그 (`.gitignore` 대상) |
 
 세 가지 실행 결과가 포함되어 있습니다.
