@@ -1,0 +1,7 @@
+[
+  {
+    "type": "RuntimeError",
+    "stage": "restaurantRecommend",
+    "msg": "인증 실패(401). KAKAO_API_KEY 값과 Kakao Developers의 플랫폼/도메인 설정을 확인하세요"
+  }
+]

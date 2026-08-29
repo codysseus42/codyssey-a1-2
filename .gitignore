@@ -9,9 +9,7 @@ warning.txt
 warning.json
 warning.jsonl
 error.txt
-error.json
 *_warning.txt
 *_warning.json
 *_warning.jsonl
 *_error.txt
-*_error.json
